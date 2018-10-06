@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <title>乐淘-购物车</title>
+    <meta name="description" content="乐呀乐淘淘">
+    <meta name="Keywords" content="乐呀 乐淘淘 上乐淘">
+    <link rel="stylesheet" href="assets/mui/css/mui.min.css">
+    <link type="image/x-icon" rel="shortcut icon" href="images/favicon.ico">
+    <link rel="stylesheet" href="assets/fa/css/font-awesome.min.css">
+    <link rel="stylesheet" href="less/cart.css">
+</head>
+<body>
+<header class="lt_topBar">
+    <a href="javascript:history.back();" class="icon_arrow fa fa-arrow-left"></a>
+    <span>购物车</span>
+    <a href="javascript:;" class="icon_refresh fa fa-refresh"></a>
+</header>
+
+<div class="container">
+    <div class="lt_box">
+        <div class="mui-scroll-wrapper" id="refreshContainer">
+            <div class="mui-scroll">
+                <ul id="OA_task_2" class="mui-table-view">
+                    <!--这里放置真实显示的DOM内容-->
+                </ul>
+            </div>
+        </div>
+    </div>
+
+</div>
+<div class="cart_order">订单总额：¥<span id="cartAmount">0.00</span> <a id="go_pay" href="javascript:;">生成订单</a></div>
+<footer class="lt_tabs">
+    <ul>
+        <li ><a  href="index.html" class="fa fa-home ">
+            <p>首页</p>
+        </a></li>
+        <li><a href="category.html" class="fa fa-bars ">
+            <p>分类</p>
+        </a></li>
+        <li><a href="cart.html" class="fa fa-shopping-cart">
+            <p>购物车</p>
+        </a></li>
+        <li><a href="user/" class="fa fa-user">
+            <p>会员中心</p>
+        </a></li>
+    </ul>
+</footer>
+
+<script src="assets/zepto/zepto.min.js"></script>
+<script src="assets/artTemplate/template-native.js"></script>
+<script src="assets/mui/js/mui.min.js"></script>
+<script src="js/common.js"></script>
+<script src="js/cart.js"></script>
+
+<script type="text/arttemplate" id="lt_cart">
+    <%for(var i=0;i< products.length;i++) {%>
+    <li class="mui-table-view-cell mui-transitioning">
+        <div class="mui-slider-right mui-disabled">
+            <a data-id="<%=i%>" class="mui-btn mui-btn-blue mui-icon  mui-icon-compose"
+               style="transform: translate(0px, 0px);"></a>
+            <a data-id="<%=i%>" class="mui-btn mui-btn-red mui-icon mui-icon-trash"
+               style="transform: translate(0px, 0px);"></a>
+        </div>
+        <a href="javascript:;" class="mui-navigate-right mui-slider-handle"
+           style="transform: translate(0px, 0px);">
+            <img class="mui-media-object mui-pull-left" src="images/detail.jpg">
+            <div class="mui-media-body">
+                <p class="name"><%=products[i].proName%></p>
+                <p class="info">
+                    <span class="price">¥<%=products[i].price%></span>
+                    <span class="oldPrice">¥<%=products[i].oldPrice%>1</span>
+                    <span class="number">x<%=products[i].num%>双</span>
+                </p>
+                <p><span class="size">鞋码：<%=products[i].size%></span></p>
+            </div>
+            <input data-id="<%=products[i].id%>" data-price="<%=products[i].price%>" data-num="<%=products[i].num%>" type="checkbox">
+        </a>
+    </li>
+    <%}%>
+</script>
+
+<script type="text/arttemplate" id="p_edit">
+    <div class="p_size">
+        尺码:
+        <%for(var i=size.split("-")[0];i<=size.split("-")[1];i++){%>
+        <span data-size="<%=i%>" <%if(i==cart_size){%>class="selected"<%}%> ><%=i%></span>
+        <%}%>
+    </div>
+    <div class="p_num">
+        <span>数量:</span>
+        <span class="lt_reduce">-</span>
+        <span class="lt_nums"><%=cart_num%></span>
+        <span class="lt_add">+</span>
+        <span class="lt_maxnum" data-maxnum="<%=num%>">    剩余:<%=num%>件</span>
+    </div>
+</script>
+
+</body>
+</html>

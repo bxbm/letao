@@ -1,0 +1,16 @@
+.container {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 45px 0 50px 0;
+  background: #efeff4;
+}
+.container .p20 {
+  width: 100%;
+  padding: 15px;
+  text-align: center;
+}
+.container a.btn_outLogin {
+  width: 100%;
+}

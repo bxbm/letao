@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <title>乐淘</title>
+    <meta name="description" content="乐呀乐淘淘">
+    <meta name="Keywords" content="乐呀 乐淘淘 上乐淘">
+    <link rel="stylesheet" href="assets/mui/css/mui.min.css">
+    <link type="image/x-icon" rel="shortcut icon" href="images/favicon.ico">
+    <link rel="stylesheet" href="assets/fa/css/font-awesome.min.css">
+    <link rel="stylesheet" href="less/category.css">
+</head>
+<body>
+<header class="lt_topBar">
+    <a href="javascript:history.back();" class="icon_arrow fa fa-arrow-left"></a>
+    <form action="javascript:;">
+            <div >
+                <input type="search" placeholder="  耐克" >
+            </div>
+    </form>
+    <a href="search.html" class="icon_search fa fa-search"></a>
+</header>
+
+<div class="container">
+        <div class="lt_nav">
+        </div>
+        <div class="lt_box">
+            <div class="mui-scroll-wrapper">
+                <div class="mui-scroll">
+                    <!--这里放置真实显示的DOM内容-->
+                </div>
+            </div>
+        </div>
+
+
+</div>
+
+<footer class="lt_tabs">
+    <ul>
+        <li ><a  href="index.html" class="fa fa-home ">
+            <p>首页</p>
+        </a></li>
+        <li><a href="category.html" class="fa fa-bars lt-active">
+            <p>分类</p>
+        </a></li>
+        <li><a href="cart.html" class="fa fa-shopping-cart">
+            <p>购物车</p>
+        </a></li>
+        <li><a href="user" class="fa fa-user">
+            <p>会员中心</p>
+        </a></li>
+    </ul>
+</footer>
+
+<script src="assets/zepto/zepto.min.js"></script>
+<script src="assets/artTemplate/template-native.js"></script>
+<script src="assets/mui/js/mui.min.js"></script>
+<script src="js/category.js"></script>
+<script type="text/arttemplate" id="lt_first_category">
+    <%for(var i=0;i< rows.length;i++) {%>
+    <a href="javascript:;" data-id="<%=rows[i].id%>" class="<%if(rows[i].id==1){%>lt_active<%}%>"> <%=rows[i].categoryName%> </a>
+    <%}%>
+</script>
+<script type="text/arttemplate" id="lt_second_category">
+
+    <ul class="mui-clearfix">
+        <%for(var i=0;i< rows.length;i++) {%>
+        <li><a href="">
+            <img src="<%=rows[i].brandLogo%>" alt="">
+            <p><%=rows[i].brandName%></p>
+        </a></li>
+        <%}%>
+    </ul>
+
+</script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+.container {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 55px 10px 50px 10px;
+  background: #fff;
+}
+.container [name="code"] {
+  width: 65%;
+}
+.container a.btn_getCode {
+  width: 30%;
+  height: 40px;
+  float: right;
+}
+.container a.btn_getCode.btn-gray {
+  background: #999;
+  border-color: #999;
+}
+.container a.btn_register {
+  margin-top: 12px;
+  width: 100%;
+}
+.container .cz_text {
+  height: 40px;
+  padding-top: 10px;
+  font-size: 14px;
+}
+.container .cz_text a {
+  float: right;
+  font-size: 14px;
+  color: #666;
+}

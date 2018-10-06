@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>后台管理系统-首页</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="assets/bootstrap-validator/css/bootstrapValidator.min.css"/>
+    <link rel="stylesheet" href="assets/nprogress/nprogress.css"/>
+    <link rel="stylesheet" href="css/admin.css"/>
+</head>
+<body>
+<aside class="ad_aside">
+    <!--商标-->
+    <div class="brand"><a href="index.html">ITCAST</a></div>
+    <!--用户-->
+    <div class="user">
+        <img src="images/default.png" alt=""/>
+        <span>管理员</span>
+    </div>
+    <!--菜单-->
+    <div class="menu">
+        <ul>
+            <li><a href="userManage.html"><span class="glyphicon glyphicon-user"></span> 用户管理</a></li>
+            <li  >
+                <a href="javascript:;"><span class="glyphicon glyphicon-list"></span> 分类管理</a>
+                <div class="child" style="display: none" >
+                    <a href="categoryFirst.html">一级分类</a>
+                    <a href="categorySecond.html">二级分类</a>
+                </div>
+            </li>
+            <li class="now"><a href="productManage.html"><span class="glyphicon glyphicon-tags"></span> 商品管理</a></li>
+        </ul>
+    </div>
+</aside>
+<section class="ad_section">
+    <!--顶部导航-->
+    <nav class="ad_nav">
+        <a data-menu href="javascript:;"><span class="glyphicon glyphicon-align-justify"></span></a>
+        <a data-logout href="javascript:;"><span class="glyphicon glyphicon-log-out"></span></a>
+    </nav>
+    <div class="container-fluid">
+        <!--路径导航-->
+        <ol class="breadcrumb">
+            <li><a href="#">管理系统</a></li>
+            <li class="active">商品管理</li>
+        </ol>
+        <div class="btn btn-info" id="addCate">添加分类</div>
+        <div class="ad_content" style="margin-top: 20px">
+            <table class="table table-bordered table-hover">
+                <thead>
+                <tr>
+                    <th width="10%">序号</th>
+                    <th width="25%">商品名称</th>
+                    <th width="25%">商品描述</th>
+                    <th width="10%">商品库存</th>
+                    <th width="10%">商品尺寸</th>
+                    <th width="10%">商品状态</th>
+                    <th width="10%">商品操作</th>
+                </tr>
+                </thead>
+                <tbody>
+                <!--content-->
+                </tbody>
+            </table>
+        </div>
+        <nav  class="page">
+            <ul class="pagination" id="paginator">
+                <li class="page-item">
+                    <a class="page-link" href="#" aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                </li>
+                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item">
+                    <a class="page-link" href="#" aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</section>
+<div class="modal fade mt_300" id="addModal" style="display: none;">
+    <div class="modal-dialog modal-md">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span>×</span></button>
+                <h4 class="modal-title">添加商品</h4>
+            </div>
+            <div class="modal-body">
+                <form action="#" id="form" >
+                    <div class="form-group ">
+                        <input name="proName" type="text" class="form-control" placeholder="请输入商品名称" >
+                    </div>
+                    <div class="form-group ">
+                        <input name="proDesc" type="text" class="form-control" placeholder="请输入商品描述" >
+                    </div>
+                    <div class="form-group ">
+                        <input name="num" type="text" class="form-control" placeholder="请输入商品库存" >
+                    </div>
+                    <div class="form-group ">
+                        <input name="size" type="text" class="form-control" placeholder="请输入商品尺码" >
+                    </div>
+                    <div class="form-group ">
+                        <input name="price" type="text" class="form-control" placeholder="请输入商品价格" >
+                    </div>
+                    <div class="form-group ">
+                        <input name="oldPrice" type="text" class="form-control" placeholder="请输入商品原价" >
+                    </div>
+                    <div class="form-group  clearfix">
+                        <input type="hidden" name="brandId">
+                        <span class="firstCate">选择商品所属品牌:</span>
+                        <div class="choosebox dropdown">
+                            <span class="firstCate">一级分类:</span>
+                            <button type="button" class="btn btn-default dropdown-toggle first-btn" data-toggle="dropdown" aria-haspopup="true"
+                                    aria-expanded="false">
+                                请选择 <span class="caret"></span></button>
+                            <ul class="dropdown-menu dropdown-menu1">
+                                <!--下拉框数据-->
+                            </ul>
+                        </div>
+                        <div class="choosebox dropdown" >
+                            <span class="firstCate">品牌名称:</span>
+                            <button type="button" class="btn btn-default dropdown-toggle second-btn" data-toggle="dropdown" aria-haspopup="true"
+                                    aria-expanded="false">
+                                请选择 <span class="caret"></span></button>
+                            <ul class="dropdown-menu dropdown-menu2">
+                                <!--下拉框数据-->
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="form-group upimg">
+                        <!--<input type="hidden" name="brandLogo">-->
+                        <input id="fileupload" type="file" name="pic1" multiple="multiple" >
+                        <span class="glyphicon glyphicon-upload"></span>
+                        <img id="uploadimg" src="images/none.png" height="100px" />
+                        <div id="progress">
+                            <div class="bar" style="width: 0%;"></div>
+                        </div>
+                    </div>
+                    <div class="form-group ">
+                        <input type="hidden" name="statu" value="1">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                <button type="submit" class="btn btn-primary" form="form">确定</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<!--初始化模板-->
+<script type="text/arttemplate" id="productlist">
+    <%var $=getJquery();%>
+    <%$.each(rows,function(i,item){%>
+    <tr>
+        <td><%=i+1+(page-1)*size%></td>
+        <td><%=item.proName%></td>
+        <td><%=item.proDesc%></td>
+        <td><%=item.num%></td>
+        <td><%=item.size%></td>
+        <td><%if(item.statu==1){%>已上架<%}else{%>已下架<%}%></td>
+        <td>
+            <a data-id="<%=item.id%>" data-brandId="<%=item.brandId%>" data-num="<%=item.num%>" data-oldPrice="<%=item.oldPrice%>" data-price="<%=item.price%>"
+               data-proDesc="<%=item.proDesc%>" data-proName="<%=item.proName%>" data-size="<%=item.size%>" data-statu="<%=item.statu%>"
+               href="javascript:;" class="btn btn-sm btn-info">编辑</a>
+            <%if(item.statu==1){%>
+            <a data-id="<%=item.id%>" data-name="<%=item.categoryName%>" href="javascript:;" class="btn btn-sm btn-danger forb">下架</a>
+            <%}else{%>
+            <a data-id="<%=item.id%>" data-name="<%=item.categoryName%>" href="javascript:;" class="btn btn-sm btn-primary forb">上架</a>
+            <%}%>
+        </td>
+    </tr>
+    <%})%>
+</script>
+<!--商品所属品牌选择下拉框模板-->
+<script type="text/arttemplate" id="firstCate">
+    <%var $=getJquery();%>
+    <%$.each(rows,function(i,item){%>
+    <li data-categoryid="<%=item.id%>" data-categoryname="<%=item.categoryName%>"><a href="javascript:;"><%=item.categoryName%></a></li>
+    <%})%>
+</script>
+<!--商品所属品牌选择下拉框模板2-->
+<script type="text/arttemplate" id="brandCate">
+    <%var $=getJquery();%>
+    <%$.each(rows,function(i,item){%>
+    <li data-id="<%=item.id%>" data-brandName="<%=item.brandName%>"><a href="javascript:;"><%=item.brandName%></a></li>
+    <%})%>
+</script>
+
+<script src="assets/jquery/jquery.min.js"></script>
+<script src="assets/bootstrap-validator/js/bootstrapValidator.min.js"></script>
+<script src="assets/jquery-fileupload/jquery.ui.widget.js"></script>
+<script src="assets/jquery-fileupload/jquery.fileupload.js"></script>
+<script src="assets/jquery-fileupload/jquery.iframe-transport.js"></script>
+<script src="assets/bootstrap/js/bootstrap.min.js"></script>
+<script src="assets/nprogress/nprogress.js"></script>
+<script src="assets/artTemplate/template-native.js"></script>
+<script src="assets/bootstrap-paginator/bootstrap-paginator.min.js"></script>
+<script src="js/admin.js"></script>
+<script src="js/produManage.js"></script>
+</body>
+</html>

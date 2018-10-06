@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <title>乐淘-个人中心</title>
+    <meta name="description" content="乐呀乐淘淘">
+    <meta name="Keywords" content="乐呀 乐淘淘 上乐淘">
+    <link rel="stylesheet" href="../assets/mui/css/mui.min.css">
+    <link type="image/x-icon" rel="shortcut icon" href="../images/favicon.ico">
+    <link rel="stylesheet" href="../assets/fa/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../less/user/index.css">
+</head>
+<body>
+<header class="lt_topBar">
+    <a href="javascript:history.back();" class="icon_arrow fa fa-arrow-left"></a>
+    <span>个人中心</span>
+</header>
+
+<div class="container">
+    <ul class="mui-table-view">
+        <li class="mui-table-view-cell mui-media">
+            <a class="mui-navigate-right" href="javascript:;">
+                <img class="mui-media-object mui-pull-left head-img" id="head-img" src="../images/user.jpg">
+                <div class="mui-media-body">加载中...<p class="mui-ellipsis">绑定手机: 加载中...</p></div>
+            </a>
+        </li>
+        <li class="mui-table-view-cell">
+            <a class="mui-navigate-right" href="/m/user/password.html">
+                账号与安全
+            </a>
+        </li>
+        <li class="mui-table-view-cell">
+            <a class="mui-navigate-right" href="/m/cart.html">
+                我的购物车
+            </a>
+        </li>
+        <li class="mui-table-view-cell">
+            <a class="mui-navigate-right" href="/m/user/address.html">
+                收货地址管理
+            </a>
+        </li>
+    </ul>
+    <div class="p20">
+        <a href="javascript:;" class="mui-btn btn_outLogin">退出登录</a>
+    </div>
+</div>
+
+<footer class="lt_tabs">
+    <ul>
+        <li ><a href="../index.html" class="fa fa-home ">
+            <p>首页</p>
+        </a></li>
+        <li><a href="../category.html" class="fa fa-bars ">
+            <p>分类</p>
+        </a></li>
+        <li><a href="../cart.html" class="fa fa-shopping-cart">
+            <p>购物车</p>
+        </a></li>
+        <li><a href="index.html" class="fa fa-user">
+            <p>会员中心</p>
+        </a></li>
+    </ul>
+</footer>
+
+<script type="text/arttemplate" id="user">
+    <a class="mui-navigate-right" href="javascript:;">
+        <img class="mui-media-object mui-pull-left head-img" id="head-img" src="../images/user.jpg">
+        <div class="mui-media-body"><%=username%><p class="mui-ellipsis">绑定手机:<%=mobile%></p></div>
+    </a>
+</script>
+
+<script src="../assets/artTemplate/template-native.js"></script>
+<script src="../assets/zepto/zepto.min.js"></script>
+<script src="../assets/mui/js/mui.min.js"></script>
+<script src="../js/common.js"></script>
+<script src="../js/u_index.js"></script>
+
+
+
+</body>
+</html>

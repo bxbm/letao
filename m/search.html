@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <title>乐淘</title>
+    <meta name="description" content="乐呀乐淘淘">
+    <meta name="Keywords" content="乐呀 乐淘淘 上乐淘">
+    <link rel="stylesheet" href="assets/mui/css/mui.min.css">
+    <link type="image/x-icon" rel="shortcut icon" href="images/favicon.ico">
+    <link rel="stylesheet" href="assets/fa/css/font-awesome.min.css">
+    <link rel="stylesheet" href="less/search.css">
+</head>
+<body>
+<header class="lt_topBar">
+    <a href="javascript:history.back();" class="icon_arrow fa fa-arrow-left"></a>
+    <span>搜索中心</span>
+
+</header>
+
+<div class="container">
+    <form action="javascript:;" name="myForm">
+        <input type="text" name="input_val" placeholder="搜索你喜欢的商品">
+        <a href="javascript:;" type="button">搜索</a>
+    </form>
+    <div class="lt_search_history">
+        <div class="lt_search_bar mui-clearfix">
+            <span>搜索历史</span>
+            <span class="fa fa-trash">清空历史</span>
+        </div>
+        <div class="lt_search_result">
+
+        </div>
+    </div>
+
+
+
+</div>
+
+<footer class="lt_tabs">
+    <ul>
+        <li ><a  href="index.html" class="fa fa-home ">
+            <p>首页</p>
+        </a></li>
+        <li><a href="category.html" class="fa fa-bars">
+            <p>分类</p>
+        </a></li>
+        <li><a href="cart.html" class="fa fa-shopping-cart">
+            <p>购物车</p>
+        </a></li>
+        <li><a href="user" class="fa fa-user">
+            <p>会员中心</p>
+        </a></li>
+    </ul>
+</footer>
+
+<script type="text/art-template" id="searchHistory">
+    <ul>
+        <%for (var i=list.length-1;i>=0;i--) {%>
+        <li class="mui-clearfix">
+            <a href="searchList.html?key=<%=list[i]%>" ><%=list[i]%></a>
+            <span class="fa fa-close" data-id="<%=i%>"></span>
+        </li>
+        <%}%>
+    </ul>
+</script>
+<script src="assets/zepto/zepto.min.js"></script>
+<script src="assets/artTemplate/template-native.js"></script>
+<script src="assets/mui/js/mui.min.js"></script>
+<script src="js/search.js"></script>
+
+</body>
+</html>

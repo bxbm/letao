@@ -1,0 +1,49 @@
+.container {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 45px 0 50px 0;
+  background: #fff;
+}
+.container .lt_nav {
+  width: 80px;
+  float: left;
+}
+.container .lt_nav a {
+  display: block;
+  width: 100%;
+  height: 50px;
+  line-height: 45px;
+  text-align: center;
+  font-size: 14px;
+  color: #333;
+  background: #f3f4f5;
+  border-right: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+}
+.container .lt_nav a.lt_active {
+  border-right: none;
+  background: #fff;
+}
+.container .lt_box {
+  overflow: hidden;
+  position: relative;
+  height: 100%;
+}
+.container .lt_box .mui-scroll {
+  height: 101%;
+}
+.container .lt_box ul li {
+  float: left;
+  width: 33.333%;
+  padding-top: 10px;
+  text-align: center;
+}
+.container .lt_box ul li img {
+  width: 100%;
+  display: block;
+}
+.container .lt_box ul li p {
+  color: #666;
+}
